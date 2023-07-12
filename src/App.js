@@ -39,7 +39,7 @@ function App() {
     }
 }
 try {
-    const response = await fetch('http://localhost:8002/completions', options);
+    const response = await fetch('https://test-2s8r.onrender.com/completions', options);
     const data = await response.json();
     console.log(data.choices[0].message);
     SetOutput([...output,data.choices[0].message]);
