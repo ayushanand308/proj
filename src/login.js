@@ -10,7 +10,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:8000/login', {
+      const response = await fetch('https://clonebackend2.onrender.com/login', {
         method: 'POST',
         body: JSON.stringify({
           email: email,
@@ -106,7 +106,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
                 href="#"
                 className="mt-4 block text-sm text-center font-medium text-rose-600 hover:underline focus:outline-none focus:ring-2 focus:ring-rose-500"
               >
-                Forgot your password?
+                Create new account
               </a>
             </div>
           </div>

@@ -8,6 +8,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropagateLoader } from 'react-spinners';
 
+
+
 const Chats = ({ question, output, time, handleChange, handleSubmit, value, isLoading }) => {
   const [isCopied, setIsCopied] = useState(-1);
   const [scrollToBottom, setScrollToBottom] = useState(false);

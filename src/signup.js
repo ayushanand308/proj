@@ -25,7 +25,7 @@ const Signup = () => {
     // TODO: Implement signup logic
     if(PasswordsMatch(password,confirmPassword)){
       try {
-        const response = await fetch('http://localhost:8000/signup', {
+        const response = await fetch('https://clonebackend2.onrender.com/signup', {
           method: 'POST',
           body: JSON.stringify({
             email: email,

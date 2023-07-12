@@ -7,6 +7,7 @@ import ImageGeneration from './imageGeneration';
 import { useState,useEffect } from 'react';
 import Login from './login';
 import Signup from './signup';
+import ImageVariation from './imageVariation';
 
 
 
@@ -15,7 +16,6 @@ function App() {
   const navigate=useNavigate();
   const [isLoading, setIsLoading] = useState(false);
   const [isLoggedIn,setIsLoggedIn]=useState(false);
-  console.log(process.env.REACT_APP_BASE_URL)
 
   /* useEffect(()=>{
     const clearLocalStorage=()=>{
@@ -39,7 +39,7 @@ function App() {
     }
 }
 try {
-    const response = await fetch('http://localhost:8000/completions', options);
+    const response = await fetch('http://localhost:8002/completions', options);
     const data = await response.json();
     console.log(data.choices[0].message);
     SetOutput([...output,data.choices[0].message]);
@@ -58,12 +58,12 @@ setIsLoading(false);
 const handleSubmit = async (e) => {
   e.preventDefault();
 try {
+  navigate('/chats');
   await generateOutput();
   setQuestion([...question,value]);
   const timestamp = new Date().toLocaleTimeString('en-US', {hour: 'numeric', minute: 'numeric'});
   SetTime([...time, timestamp]);
   setValue("");
-  navigate('/chats');
   } catch (error) {
   console.error('Error', error);
   }
@@ -97,7 +97,7 @@ const [value, setValue] = useState("");
     };
 
     try{
-      const response = await fetch('http://localhost:8000/generations', options);
+      const response = await fetch('https://test-2s8r.onrender.com/generations', options);
       const data = await response.json();
       setGeneratedImages([...generatedImages,data.data]);
     }catch(error){
@@ -152,6 +152,7 @@ const [value, setValue] = useState("");
   isLoading={isLoading} />} />
   <Route path='/login' element={<Login isLoggedIn={isLoggedIn} setIsLoggedIn={setIsLoggedIn}/>}/>
   <Route path='/signup' element={<Signup/>}/>
+  <Route path='/variations' element={<ImageVariation/>}/>
 </Routes>
     </div>
   );
