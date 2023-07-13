@@ -59,7 +59,7 @@ const ImageVariation = () => {
         method: 'POST',
         body: formData,
       };
-      const response = await fetch('https://test-2s8r.onrender.com/upload', options);
+      const response = await fetch('https://frustated.onrender.com/upload', options);
       const data = await response.json();
       console.log(data);
     } catch (error) {
@@ -73,7 +73,7 @@ const ImageVariation = () => {
       const options = {
         method: 'POST',
       };
-      const response = await fetch('https://test-2s8r.onrender.com/variations', options);
+      const response = await fetch('https://frustated.onrender.com/variations', options);
       const data = await response.json();
       console.log(data);
       const imageUrls = data.map((item) => item.url); // Extract the URLs from data array

@@ -7,6 +7,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropagateLoader } from 'react-spinners';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+
+
+import image1 from '../src/images/d.png';
 
 
 
@@ -19,6 +23,7 @@ const Chats = ({ question, output, time, handleChange, handleSubmit, value, isLo
     setScrollToBottom(true);
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   };
+
 
   useEffect(() => {
     if (scrollToBottom) {
@@ -49,9 +54,9 @@ const Chats = ({ question, output, time, handleChange, handleSubmit, value, isLo
 
   const messagesEndRef = useRef(null);
 
-  useEffect(() => {
+  /* useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
-  });
+  }); */
 
   return (
     <div className="flex flex-col justify-center items-center" style={{ paddingBottom: "100px" }}>
@@ -112,11 +117,17 @@ const Chats = ({ question, output, time, handleChange, handleSubmit, value, isLo
           )}
         </div>
       ))}
-      <div className="flex justify-center">
+
+
+
+
+      <div className="relative">
         {isLoading && (
-          <PropagateLoader color="#36d7b7" size={10} speedMultiplier={1} style={{ bottom: "90px", position: "fixed" }} />
+          <div className="fixed bottom-4 right-1/2 transform -translate-x-1/2">
+            <PropagateLoader color="#36d7b7" size={10} speedMultiplier={1} style={{position:"fixed",bottom:"90px"}} />
+          </div>
         )}
-        <InputForm className=""  handleChange={handleChange} handleSubmit={handleSubmit} value={value} />
+        <InputForm handleChange={handleChange} handleSubmit={handleSubmit} value={value} />
       </div>
 
       <div style={{ float: "left", clear: "both" }} ref={messagesEndRef}></div>

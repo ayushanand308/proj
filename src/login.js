@@ -10,7 +10,7 @@ const Login = ({ isLoggedIn, setIsLoggedIn }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('https://clonebackend2.onrender.com/login', {
+      const response = await fetch('https://frustated.onrender.com/login', {
         method: 'POST',
         body: JSON.stringify({
           email: email,

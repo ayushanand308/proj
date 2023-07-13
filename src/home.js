@@ -157,7 +157,7 @@ const Home = ({
       </nav>
 
       <div className="flex flex-col items-center justify-center  mt-20">
-        <h1 className="text-4xl font-bold mb-8 mt-4 text-gray-800">AyushGPT</h1>
+        <h1 className="text-4xl font-bold mb-8 mt-4 text-gray-800">CloneGPT</h1>
         <div className="flex flex-col md:flex-row gap-8 ma" id="main">
           <div className="custom:w-3/4 md:w-1/2 flex flex-col items-center justify-center shadow-lg mx-auto rounded-3xl p-8 bg-white " id="image-generation">
           <svg className="bg-rose-500 rounded-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">

@@ -8,6 +8,8 @@ import { useState,useEffect } from 'react';
 import Login from './login';
 import Signup from './signup';
 import ImageVariation from './imageVariation';
+import axios from 'axios';
+
 
 
 
@@ -30,19 +32,18 @@ function App() {
     setIsLoading(true);
     const options={
     method:"POST",
-    body:JSON.stringify({
+    data:{
         message:value,
-    }),
+    },
     headers:{
         "Content-Type":"application/json",
-        "Authorization": `${localStorage.getItem("token")}`
     }
 }
 try {
-    const response = await fetch('https://test-2s8r.onrender.com/completions', options);
-    const data = await response.json();
-    console.log(data.choices[0].message);
-    SetOutput([...output,data.choices[0].message]);
+    const response = await axios('https://frustated.onrender.com/completions', options);
+    console.log(response.data.choices[0].message);
+/*     console.log(`{Authorization: ${localStorage.getItem("token")}}`)
+ */    SetOutput([...output,response.data.choices[0].message]);
 } catch (error) {
     console.error('Error', error);
 }
@@ -97,7 +98,7 @@ const [value, setValue] = useState("");
     };
 
     try{
-      const response = await fetch('https://test-2s8r.onrender.com/generations', options);
+      const response = await fetch('http://localhost:8002/generations', options);
       const data = await response.json();
       setGeneratedImages([...generatedImages,data.data]);
     }catch(error){

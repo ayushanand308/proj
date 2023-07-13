@@ -3,28 +3,30 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const InputForm = ({ handleChange, handleSubmit, value }) => {
     return (
-      <form
-        className="fixed bottom-0 md:w-3/5 w-3/4 mb-4 p-2 rounded-lg bg-rose-500 text-white"
+      <div>
+        <form
+        className="fixed bottom-0 custom:flex left-4 right-4 mb-4 p-2 rounded-lg"
         onSubmit={handleSubmit}
       >
-        <div className="flex items-center">
+        <div className="flex items-center justify-center">
           <input
             id="message-input"
             value={value}
             onChange={handleChange}
-            className="focus:outline-none border-transparent focus:shadow-outline-blue rounded-lg text-white py-2 px-4 flex-1"
+            className="max-w-96 px-4 py-2 rounded-lg focus:outline-none focus:ring-2 focus:ring-rose-500"
             type="text"
             placeholder="Ask a question"
-            style={{ backgroundColor: 'transparent', color: 'rgb(255, 255, 255)', fontSize: '1.2rem' }}
           />
           <button
-            className="font-bold py-2 px-4 rounded-md bg-gray-500 hover:bg-rose-400 text-white"
+            className="px-4 py-2 bg-rose-500 text-white rounded-lg ml-2 hover:bg-rose-600 focus:outline-none focus:ring-2 focus:ring-rose-500"
             type="submit"
           >
           <FontAwesomeIcon icon={faPaperPlane}/>
           </button>
         </div>
       </form>
+      </div>
+      
     );
   };
 

@@ -176,14 +176,6 @@ const ImageGeneration = ({setGenenratedImages, generatedImages, handlesubmit1, v
         </ResponsiveMasonry>
       )}
 
-
-
-
-
-
-    
-    
-      
       <div className="relative">
         {isLoading && (
           <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2">
