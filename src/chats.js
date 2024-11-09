@@ -7,7 +7,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { PropagateLoader } from 'react-spinners';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+
 
 
 import image1 from '../src/images/d.png';
@@ -18,6 +18,7 @@ const Chats = ({ question, output, time, handleChange, handleSubmit, value, isLo
   const [isCopied, setIsCopied] = useState(-1);
   const [scrollToBottom, setScrollToBottom] = useState(false);
   const navigate = useNavigate();
+  const [hasStarted, setHasStarted] = useState(false);
 
   const scrollToBottomHandler = () => {
     setScrollToBottom(true);
@@ -54,18 +55,32 @@ const Chats = ({ question, output, time, handleChange, handleSubmit, value, isLo
 
   const messagesEndRef = useRef(null);
 
+
   /* useEffect(() => {
     messagesEndRef.current.scrollIntoView({ behavior: "smooth" });
   }); */
 
   return (
     <div className="flex flex-col justify-center items-center" style={{ paddingBottom: "100px" }}>
+      
       <button className="navigate-home-button bg-rose-200 sticky top-0 w-full" onClick={() => navigate("/")}>
         <FontAwesomeIcon icon={faHouse} />
       </button>
+
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
+      {
+        question.length<1 && 
+        <div class="content">
+          <h1>Get instant solutions at your fingertips with our AI-driven chatbot</h1>
+        </div> 
+      }
+       
+      
       {pairs.map((pair, index) => (
         <div key={`pair-${index}`} className="mt-4 md:w-3/5 w-3/4">
-          <div className="bg-rose-500 text-white p-4 flex rounded-t-2xl flex-row-reverse justify-between text-left">
+          <div className="bg-rose-500 text-white p-4 flex rounded-t-2xl flex-row-reverse justify-between text-left ">
             <span className="text-sm text-[rgb(255,255,255)] justify-end items-end flex flex-col w-1/12">
               {pair.timestamp}
             </span>

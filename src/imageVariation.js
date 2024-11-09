@@ -32,6 +32,8 @@ const ImageVariation = () => {
     setData({ img, i });
   };
 
+  
+
   const images = [
     { src: image1, width: '120%', height: '50%' },
     { src: image2, width: '100%', height: '25%' },
@@ -98,6 +100,9 @@ const ImageVariation = () => {
 
   return (
     <div className="p-5">
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
       <p className="extra-info text-center">
         <label
           htmlFor="files"

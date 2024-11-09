@@ -8,6 +8,9 @@ import ImageViewer from "./imageViewer";
 import { useState,useRef,useEffect } from "react";
 import Modal from "./modal";
 import { set } from "mongoose";
+import Skeleton from 'react-loading-skeleton'
+import 'react-loading-skeleton/dist/skeleton.css'
+
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 
 import image1 from '../src/images/a1.png';
@@ -120,6 +123,9 @@ const ImageGeneration = ({setGenenratedImages, generatedImages, handlesubmit1, v
       <button className="bg-rose-200 sticky w-full top-0 max" onClick={() => navigate("/")}>
         <FontAwesomeIcon icon={faHouse} />
       </button>
+      <div class="bg"></div>
+      <div class="bg bg2"></div>
+      <div class="bg bg3"></div>
       <div className="mt-8 w-3/4 flex-col justify-center items-center mx-auto">
         {prompt.map((p, index) => (
           <div key={index} className="m-8 flex-row sm:flex-row items-center justify-center">
@@ -175,6 +181,10 @@ const ImageGeneration = ({setGenenratedImages, generatedImages, handlesubmit1, v
           </Masonry>
         </ResponsiveMasonry>
       )}
+
+<Skeleton count={1} width={200}
+height={100} />
+
 
       <div className="relative">
         {isLoading && (

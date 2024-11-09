@@ -98,7 +98,7 @@ const [value, setValue] = useState("");
     };
 
     try{
-      const response = await fetch('http://localhost:8002/generations', options);
+      const response = await fetch('https://frustated.onrender.com/generations', options);
       const data = await response.json();
       setGeneratedImages([...generatedImages,data.data]);
     }catch(error){

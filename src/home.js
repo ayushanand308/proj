@@ -31,6 +31,8 @@ const Home = ({
     
   };
 
+  
+
   const handleLogin = () => {
     navigate('/login');
   };
@@ -153,13 +155,20 @@ const Home = ({
           >
             <FontAwesomeIcon icon={faImage} /> Generations
           </button>
+          <button
+            onClick={() => navigate('/variations')}
+            className="block w-full text-left px-4 py-2 transition-all duration-200 ease-in-out hover:bg-rose-500 hover:text-white"
+          >
+            <FontAwesomeIcon icon={faImage} /> Image Variations
+          </button>
+          
         </div>
       </nav>
 
       <div className="flex flex-col items-center justify-center  mt-20">
-        <h1 className="text-4xl font-bold mb-8 mt-4 text-gray-800">CloneGPT</h1>
+        <h1 className="text-4xl font-bold mb-8 mt-4 text-gray-800">ClonGPT</h1>
         <div className="flex flex-col md:flex-row gap-8 ma" id="main">
-          <div className="custom:w-3/4 md:w-1/2 flex flex-col items-center justify-center shadow-lg mx-auto rounded-3xl p-8 bg-white " id="image-generation">
+          <div className="custom:w-11/12 md:w-1/2 flex flex-col items-center justify-center shadow-lg mx-auto rounded-3xl p-8 bg-white " id="image-generation">
           <svg className="bg-rose-500 rounded-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#ffffff" fillOpacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,122.7C960,160,1056,224,1152,245.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
@@ -178,11 +187,11 @@ const Home = ({
                 ))}
               </ul>
             </div>
-            <div className="mb-4 Input">
+            <div className="mx-2 Input">
               <ImageInput handlesubmit1={handlesubmit1} value1={value1} setValue1={setValue1} />
             </div>
           </div>
-          <div className="custom:w-3/4 md:w-1/2 flex flex-col items-center justify-center shadow-lg rounded-3xl p-8 mx-auto  bg-white" id="chat">
+          <div className="custom:w-11/12 md:w-1/2 flex flex-col items-center justify-center shadow-lg rounded-3xl p-8 mx-auto  bg-white" id="chat">
           <svg className="bg-rose-500 rounded-md" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
                 <path fill="#ffffff" fillOpacity="1" d="M0,64L48,80C96,96,192,128,288,128C384,128,480,96,576,85.3C672,75,768,85,864,122.7C960,160,1056,224,1152,245.3C1248,267,1344,245,1392,234.7L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
             </svg>
@@ -201,7 +210,7 @@ const Home = ({
                 ))}
               </ul>
             </div>
-            <div className='Input -mt-8'>
+            <div className='Input mx-2 custom:mx-4'>
             <InputForm2 className="Input" handleChange={handleChange} handleSubmit={handleSubmit} value={value} />
             </div>
           </div>
@@ -232,7 +241,7 @@ const Home = ({
             </div>
           </div> */}
         </div>
-        <div className="custom:w-3/4 md:w-1/2 my-8 flex flex-col items-center justify-center shadow-lg rounded-3xl p-6 mx-auto  bg-white">
+        <div className="custom:w-11/12 md:w-1/2 my-8 flex flex-col items-center justify-center shadow-lg rounded-3xl p-6 mx-auto  bg-white">
               <ul className="flex flex-col items-center text-center gap-4">
                 {['Upload image to generate variations'].map((text) => (
                   <li
